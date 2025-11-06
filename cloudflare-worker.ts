@@ -27,11 +27,10 @@ interface Video {
   invidious_url: string
 }
 
-async function fetchYouTubeTrending(env: Env): Promise<Video[]> {
-  const invidious_url = env.INVIDIOUS_INSTANCE || 'http://localhost:9000'
-  
+async function fetchYouTubeTrending(): Promise<Video[]> {
   try {
-    const response = await fetch(`${invidious_url}/api/v1/trending`, {
+    // 使用 RSSHub 获取 YouTube 热榜
+    const response = await fetch('https://rsshub.app/youtube/trending', {
       method: 'GET',
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
@@ -40,27 +39,34 @@ async function fetchYouTubeTrending(env: Env): Promise<Video[]> {
     })
 
     if (!response.ok) {
-      throw new Error(`Invidious returned ${response.status}`)
+      throw new Error(`RSSHub returned ${response.status}`)
     }
 
-    const videos = await response.json() as any[]
+    const data = await response.json() as any
+    const items = data.items || []
 
-    // 转换数据格式
-    return (videos || []).slice(0, 30).map((video) => ({
-      videoId: video.videoId,
-      title: video.title,
-      author: video.author,
-      authorId: video.authorId,
-      viewCount: video.viewCount,
-      viewCountText: video.viewCountText,
-      published: video.published,
-      publishedText: video.publishedText,
-      lengthSeconds: video.lengthSeconds,
-      url: `https://www.youtube.com/watch?v=${video.videoId}`,
-      invidious_url: `${invidious_url}/watch?v=${video.videoId}`
-    }))
+    // 转换 RSS 格式为视频格式
+    return items.slice(0, 30).map((item: any) => {
+      // 从标题中提取视频 ID（格式："[标题] - [作者]"）
+      const match = item.link?.match(/v=([a-zA-Z0-9_-]{11})/)
+      const videoId = match ? match[1] : item.id?.split('/').pop() || ''
+      
+      return {
+        videoId,
+        title: item.title?.replace(/\s*-\s*YouTube$/, '') || 'Untitled',
+        author: item.author || 'Unknown',
+        authorId: '',
+        viewCount: 0,
+        viewCountText: '',
+        published: new Date(item.pubDate).getTime() / 1000,
+        publishedText: item.pubDate || '',
+        lengthSeconds: 0,
+        url: item.link || `https://www.youtube.com/watch?v=${videoId}`,
+        invidious_url: item.link || `https://www.youtube.com/watch?v=${videoId}`
+      }
+    })
   } catch (error) {
-    throw new Error(`Failed to fetch from Invidious: ${error.message}`)
+    throw new Error(`Failed to fetch from RSSHub: ${error.message}`)
   }
 }
 
@@ -96,7 +102,7 @@ export default {
 
     try {
       if (pathname === '/api/youtube/trending') {
-        const videos = await fetchYouTubeTrending(env)
+        const videos = await fetchYouTubeTrending()
         return jsonResponse({
           success: true,
           data: videos,
