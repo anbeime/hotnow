@@ -15,7 +15,7 @@
     "dev:with-proxy": "concurrently \"npm run youtube-proxy\" \"npm run presource && vite dev\"",
     "build": "npm run presource && vite build",
     "lint": "eslint",
-    "presource": "tsx ./scripts/favicon.ts && tsx ./scripts/source.ts",
+    "presource": "echo 'Skipping presource step'",
     "youtube-proxy": "node youtube-proxy-server.js",
     "youtube-proxy:dev": "nodemon --exec node youtube-proxy-server.js",
     "build:worker": "esbuild cloudflare-worker.ts --bundle --format=esm --outfile=dist/index.mjs",
@@ -108,9 +108,6 @@
     "wrangler": "4.14.1"
   },
   "pnpm": {
-    "patchedDependencies": {
-      "dayjs": "patches/dayjs.patch"
-    },
     "onlyBuiltDependencies": [
       "@napi-rs/pinyin",
       "@parcel/watcher",
