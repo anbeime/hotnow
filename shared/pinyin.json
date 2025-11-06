@@ -1,11 +1,5 @@
 {
   "youtube": "YouTube",
-  "taobao_hot": "taobao-rexiaozongbang",
-  "taobao_explosive": "taobao-baokuanqingdan",
-  "jd_hot": "jingdong-rexiaozongbang",
-  "pdd_hot": "pinduoduo-rexiao",
-  "xiaohongshu_hot": "xiaohongshu-rebang",
-  "weixin_hot": "weixin-24hrewen",
   "v2ex-share": "V2EX-zuixinfenxiang",
   "zhihu": "zhihu",
   "weibo": "weibo-shishiresou",
@@ -50,5 +44,11 @@
   "chongbuluo-latest": "chongbuluo-zuixin",
   "chongbuluo-hot": "chongbuluo-zuire",
   "douban": "douban-remendianying",
-  "steam": "Steam-zaixianrenshu"
+  "steam": "Steam-zaixianrenshu",
+  "taobao_hot": "taobao-rexiaozongbang",
+  "taobao_explosive": "taobao-baokuanqingdan",
+  "jd_hot": "jingdong-rexiaozongbang",
+  "pdd_hot": "pinduoduo-rexiao",
+  "xiaohongshu_hot": "xiaohongshu-rebang",
+  "weixin_hot": "weixin-24hrewen"
 }

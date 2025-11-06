@@ -7,60 +7,6 @@
     "color": "red",
     "interval": 600000
   },
-  "taobao_hot": {
-    "title": "热销总榜",
-    "name": "淘宝",
-    "type": "hottest",
-    "column": "shopping",
-    "home": "https://www.taobao.com",
-    "color": "orange",
-    "interval": 600000
-  },
-  "taobao_explosive": {
-    "title": "爆款清单",
-    "name": "淘宝",
-    "type": "hottest",
-    "column": "shopping",
-    "home": "https://www.taobao.com",
-    "color": "orange",
-    "interval": 600000
-  },
-  "jd_hot": {
-    "title": "热销总榜",
-    "name": "京东",
-    "type": "hottest",
-    "column": "shopping",
-    "home": "https://www.jd.com",
-    "color": "red",
-    "interval": 600000
-  },
-  "pdd_hot": {
-    "title": "热销",
-    "name": "拼多多",
-    "type": "hottest",
-    "column": "shopping",
-    "home": "https://www.pinduoduo.com",
-    "color": "red",
-    "interval": 600000
-  },
-  "xiaohongshu_hot": {
-    "title": "热榜",
-    "name": "小红书",
-    "type": "hottest",
-    "column": "shopping",
-    "home": "https://www.xiaohongshu.com",
-    "color": "red",
-    "interval": 600000
-  },
-  "weixin_hot": {
-    "title": "24h热文",
-    "name": "微信",
-    "type": "hottest",
-    "column": "china",
-    "home": "https://weixin.qq.com",
-    "color": "green",
-    "interval": 600000
-  },
   "v2ex": {
     "redirect": "v2ex-share",
     "name": "V2EX",
@@ -551,6 +497,60 @@
     "column": "world",
     "home": "https://store.steampowered.com",
     "color": "blue",
+    "interval": 600000
+  },
+  "taobao_hot": {
+    "title": "热销总榜",
+    "name": "淘宝",
+    "type": "hottest",
+    "column": "shopping",
+    "home": "https://www.taobao.com",
+    "color": "orange",
+    "interval": 600000
+  },
+  "taobao_explosive": {
+    "title": "爆款清单",
+    "name": "淘宝",
+    "type": "hottest",
+    "column": "shopping",
+    "home": "https://www.taobao.com",
+    "color": "orange",
+    "interval": 600000
+  },
+  "jd_hot": {
+    "title": "热销总榜",
+    "name": "京东",
+    "type": "hottest",
+    "column": "shopping",
+    "home": "https://www.jd.com",
+    "color": "red",
+    "interval": 600000
+  },
+  "pdd_hot": {
+    "title": "热销",
+    "name": "拼多多",
+    "type": "hottest",
+    "column": "shopping",
+    "home": "https://www.pinduoduo.com",
+    "color": "red",
+    "interval": 600000
+  },
+  "xiaohongshu_hot": {
+    "title": "热榜",
+    "name": "小红书",
+    "type": "hottest",
+    "column": "shopping",
+    "home": "https://www.xiaohongshu.com",
+    "color": "red",
+    "interval": 600000
+  },
+  "weixin_hot": {
+    "title": "24h热文",
+    "name": "微信",
+    "type": "hottest",
+    "column": "china",
+    "home": "https://weixin.qq.com",
+    "color": "green",
     "interval": 600000
   }
 }
