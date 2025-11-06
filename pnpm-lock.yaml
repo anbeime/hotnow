@@ -13,10 +13,7 @@ overrides:
   db0: ^0.3.1
   vite: ^6
 
-patchedDependencies:
-  dayjs:
-    hash: ab3d460b598ef9569bd8b88d40864d7b0e942a6d8b2e646643076a5c0477cc4d
-    path: patches/dayjs.patch
+patchedDependencies: {}
 
 importers:
 
@@ -72,7 +69,7 @@ importers:
         version: 2.0.0
       dayjs:
         specifier: 1.11.13
-        version: 1.11.13(patch_hash=ab3d460b598ef9569bd8b88d40864d7b0e942a6d8b2e646643076a5c0477cc4d)
+        version: 1.11.13
       db0:
         specifier: ^0.3.1
         version: 0.3.2(@libsql/client@0.15.4)(better-sqlite3@11.10.0)(mysql2@3.14.3)
