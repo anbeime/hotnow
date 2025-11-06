@@ -1,4 +1,3 @@
 import { fileURLToPath } from "node:url"
-import { dirname } from "node:path"
 
-export const projectDir = dirname(dirname(fileURLToPath(import.meta.url)))
+export const projectDir = fileURLToPath(new URL("..", import.meta.url))
