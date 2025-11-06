@@ -127,7 +127,9 @@
     "picomatch": "^4.0.2",
     "react": "^19",
     "db0": "^0.3.1",
-    "vite": "^6"
+    "vite": "^6",
+    "h3": "1.15.4",
+    "h3-nightly": "1.15.4"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

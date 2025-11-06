@@ -12,6 +12,8 @@ overrides:
   react: ^19
   db0: ^0.3.1
   vite: ^6
+  h3: 1.15.4
+  h3-nightly: 1.15.4
 
 importers:
 
@@ -81,7 +83,7 @@ importers:
         specifier: ^12.4.7
         version: 12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       h3:
-        specifier: ^1.15.1
+        specifier: 1.15.4
         version: 1.15.4
       iconv-lite:
         specifier: ^0.6.3
@@ -4552,15 +4554,6 @@ packages:
     resolution: {integrity: sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  h3-nightly@2.0.0-20251104-113718-c11ca74:
-    resolution: {integrity: sha512-A5dakUn8ug8Y+PcP3OKoUiTMpLuiwon8cdIKhMcY9WrQNG64ZX+Kow2+T7k6kwqcsR5Fv5RqqWlpPokX15LFyQ==}
-    engines: {node: '>=20.11.1'}
-    peerDependencies:
-      crossws: ^0.4.1
-    peerDependenciesMeta:
-      crossws:
-        optional: true
-
   h3@1.15.4:
     resolution: {integrity: sha512-z5cFQWDffyOe4vQ9xIqNfCZdV4p//vy6fBnr8Q1AWnVZ0teurKMG66rLj++TKwKPUP3u7iMUvrvKaEUiQw2QWQ==}
 
@@ -6035,9 +6028,6 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  rou3@0.7.10:
-    resolution: {integrity: sha512-aoFj6f7MJZ5muJ+Of79nrhs9N3oLGqi2VEMe94Zbkjb6Wupha46EuoYgpWSOZlXww3bbd8ojgXTAA2mzimX5Ww==}
-
   router@2.2.0:
     resolution: {integrity: sha512-nLTrUKm2UyiL7rlhapu/Zl45FwNgkZGaCpZbIHajDYgwlJCOzLSk+cIPAnsEqV955GjILJnKbdQC1nVPz+gAYQ==}
     engines: {node: '>= 18'}
@@ -6262,11 +6252,6 @@ packages:
 
   spdx-license-ids@3.0.22:
     resolution: {integrity: sha512-4PRT4nh1EImPbt2jASOKHX7PB7I+e4IWNLvkKFDxNhJlfjbYlleYQh285Z/3mPTHSAK/AvdMmw5BNNuYH8ShgQ==}
-
-  srvx@0.9.5:
-    resolution: {integrity: sha512-nQsA2c8q3XwbSn6kTxVQjz0zS096rV+Be2pzJwrYEAdtnYszLw4MTy8JWJjz1XEGBZwP0qW51SUIX3WdjdRemQ==}
-    engines: {node: '>=20.16.0'}
-    hasBin: true
 
   stable-hash-x@0.2.0:
     resolution: {integrity: sha512-o3yWv49B/o4QZk5ZcsALc6t0+eCelPc44zZsLtCQnZPDwFpDYSWcDnrv2TtMmMbQ7uKo3J0HTURCqckw23czNQ==}
@@ -11911,11 +11896,6 @@ snapshots:
     dependencies:
       duplexer: 0.1.2
 
-  h3-nightly@2.0.0-20251104-113718-c11ca74:
-    dependencies:
-      rou3: 0.7.10
-      srvx: 0.9.5
-
   h3@1.15.4:
     dependencies:
       cookie-es: 1.2.2
@@ -13500,8 +13480,6 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.52.5
       fsevents: 2.3.3
 
-  rou3@0.7.10: {}
-
   router@2.2.0:
     dependencies:
       debug: 4.4.3
@@ -13777,8 +13755,6 @@ snapshots:
       spdx-license-ids: 3.0.22
 
   spdx-license-ids@3.0.22: {}
-
-  srvx@0.9.5: {}
 
   stable-hash-x@0.2.0: {}
 
@@ -14459,7 +14435,7 @@ snapshots:
     dependencies:
       consola: 3.4.2
       defu: 6.1.4
-      h3: h3-nightly@2.0.0-20251104-113718-c11ca74
+      h3: 1.15.4
       nitropack: nitro-go@0.0.3(@netlify/blobs@9.1.2)(better-sqlite3@11.10.0)
       vite: 6.4.1(@types/node@24.10.0)(jiti@2.6.1)(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
     transitivePeerDependencies:
@@ -14482,7 +14458,6 @@ snapshots:
       - aws4fetch
       - bare-abort-controller
       - better-sqlite3
-      - crossws
       - drizzle-orm
       - encoding
       - idb-keyval
