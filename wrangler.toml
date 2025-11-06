@@ -1,0 +1,30 @@
+name = "hotnow"
+type = "javascript"
+main = "dist/output/server/index.mjs"
+compatibility_date = "2024-11-01"
+
+account_id = "your_account_id"
+project_name = "hotnow"
+
+# 环境配置
+[env.production]
+name = "hotnow"
+routes = [
+  { pattern = "hotnow.pages.dev", zone_name = "pages.dev" }
+]
+
+# 环境变量
+[env.production.vars]
+YOUTUBE_PROXY_URL = "https://your-youtube-proxy-url.com"
+
+[[env.production.vars.other_env]]
+
+# 构建配置
+[build]
+command = "npm run build"
+cwd = "./"
+watch_paths = ["src/**/*.ts", "src/**/*.tsx", "server/**/*.ts", "shared/**/*.ts"]
+
+[build.upload]
+format = "modules"
+dir = "dist/output/public"
